@@ -14,13 +14,12 @@ st.markdown("---")
 col1, col2 = st.columns(2)
 
 with col1:
-    facility_name = st.text_input("Facility / Site Name", value="Garkuwa Specialist Hospital")
+    ("Facility / Site Name", value="")
     solar_kwh = st.number_input("Solar Energy Generated (kWh)", min_value=0.0, value=1250.0, step=10.0)
 
 with col2:
     date_input = st.date_input("Telemetry Date", datetime.date.today())
-    device_id = st.text_input("IoT Meter ID", value="METER-GARKUWA-01")
-
+    device_id = st.text_input("IoT Meter ID", value="METER-001")
 # Core dMRV Calculations
 diesel_displaced_liters = solar_kwh * 0.25
 tco2e_offset = solar_kwh * 0.00067
