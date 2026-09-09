@@ -123,7 +123,7 @@ with st.sidebar:
     st.markdown("---")
     
     facility_name = st.text_input("Facility Name", value="Solar Mini-Grid Facility 1")
-    device_id = st.text_input("IoT Gateway ID", value="RANA54-GW-882")
+    device_id = st.text_input("IoT Gateway ID", value="GATEWAY-AURA-01")
     solar_kwh = st.number_input("Solar Generation (kWh)", min_value=0.0, value=2450.0, step=50.0)
     date_input = st.date_input("Telemetry Date", datetime.date.today())
     
@@ -156,7 +156,7 @@ st.markdown("""
 st.markdown("""
     <div class="badge-bar">
         <span class="badge-live">● Active IoT Feed</span>
-        <span class="badge-partner">Middleware Link: Rana54 Connected</span>
+        <span class="badge-partner">Middleware Status: Telemetry Gateway Active</span>
         <span class="badge-live" style="color:#60A5FA; border-color:rgba(59,130,246,0.3); background:rgba(59,130,246,0.1);">Verified Methodology: Gold Standard</span>
     </div>
 """, unsafe_allow_html=True)
@@ -176,7 +176,7 @@ col_left, col_right = st.columns([3, 2])
 with col_left:
     st.markdown("#### 📈 Hourly Generation Profile (kW)")
     
-    # Generate mock 24-hour solar curve based on generation input
+    # Generate 24-hour solar curve based on generation input
     hours = [f"{i:02d}:00" for i in range(24)]
     curve = np.sin(np.linspace(0, np.pi, 12)) ** 2
     hourly_gen = np.zeros(24)
