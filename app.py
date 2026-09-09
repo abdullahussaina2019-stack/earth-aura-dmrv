@@ -62,4 +62,4 @@ df = pd.DataFrame([{
     "Cryptographic Hash": hash_signature
 }])
 
-st.dataframe(df, use_container_width
+st.dataframe(df, use_container_width=True)
